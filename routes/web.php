@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
+Route::get('/', "CarsController@index");
+=======
 Route::get('/', function () {
     return view('layout/home');
 });
+>>>>>>> ff37825e9ac9b4b1a597847deb292ead026f162a
