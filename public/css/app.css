@@ -12627,3 +12627,11 @@ fieldset:disabled .btn {
   }
 }
 
+footer ul {
+  list-style: none;
+}
+
+footer ul li a {
+  text-decoration: none;
+}
+

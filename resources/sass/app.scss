@@ -1,1 +1,10 @@
 @import "node_modules/bootstrap/scss/bootstrap";
+
+footer{
+    ul{
+        list-style: none;
+        li a{
+            text-decoration: none;
+        }
+    }
+}
