@@ -1,6 +1,6 @@
-<header class="container">
+<header class="">
     <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
+        <div class="container">
             <a class="navbar-brand" href="#">LOGO</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
