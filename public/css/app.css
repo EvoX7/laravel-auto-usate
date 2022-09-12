@@ -12627,11 +12627,17 @@ fieldset:disabled .btn {
   }
 }
 
+footer {
+  background-color: rgb(59, 52, 52);
+  color: white;
+}
+
 footer ul {
   list-style: none;
 }
 
 footer ul li a {
   text-decoration: none;
+  color: white;
 }
 
