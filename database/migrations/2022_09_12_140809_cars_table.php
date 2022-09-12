@@ -18,9 +18,9 @@ class CarsTable extends Migration
             $carsTable->string('brand', 30);
             $carsTable->string('car_name', 30);
             $carsTable->string('trasmission', 50);
-            $carsTable->integer('mileage');
+            $carsTable->float('mileage', 5,3);
             $carsTable->string('color');
-            $carsTable->smallInteger('price');
+            $carsTable->float('price', 7,3);
             $carsTable->timestamps();
         });
     }
