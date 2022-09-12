@@ -12,7 +12,7 @@
 <body>
     @include('include.header')
 
-    <main>
+    <main class="container">
         @yield('main-content')
     </main>
 
