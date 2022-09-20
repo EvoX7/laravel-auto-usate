@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 <form class="col-8  offset-2 bg-dark p-4 rounded" method="POST" action="{{ route('cars.store') }}">
     
+=======
+<form class="col-8 offset-2 bg-dark p-4 rounded" method="POST" action="{{ route('cars.store') }}">
+>>>>>>> c30aa916ff516bcf62f442f5fac0511db20d1ed5
     @csrf
     <div class=“mb-3”>
         <label for="brand" class=“form-label text-white”>BRAND</label>
@@ -9,9 +13,9 @@
             </p>
         @enderror
         <input type=“text” name="brand" class=“form-control” required value="{{ old('brand', $car->brand) }}"
-            id="brand" >
+            id="brand">
     </div>
-   
+
     </div>
     <div class="mb-3">
         <label for="name" class="form-label text-white">CAR NAME</label>
@@ -63,7 +67,11 @@
         <input type="text" name="price" class="form-control" id="price" required
             value="{{ old('price', $car->price) }}">
     </div>
+<<<<<<< HEAD
     
     <button type=“submit” class="btn btn-success">Submit</button>
-</form>
+=======
 
+    <button type=“submit” class=“btn btn-success”>Submit</button>
+>>>>>>> c30aa916ff516bcf62f442f5fac0511db20d1ed5
+</form>
