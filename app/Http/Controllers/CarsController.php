@@ -43,7 +43,7 @@ class CarsController extends Controller
         $data = $request->all();
         $newCar = new Car();
         $newCar->brand = $data['brand'];
-        $newCar->name = $data['name'];
+        $newCar->car_name = $data['car_name'];
         $newCar->color = $data['color'];
         $newCar->trasmission = $data['trasmission'];
         $newCar->mileage = $data['mileage'];

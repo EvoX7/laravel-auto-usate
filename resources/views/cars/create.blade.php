@@ -1,5 +1,5 @@
-<form class=“col-8  offset-2 bg-dark p-4 rounded” method=“POST” action="{{ route('cars.store') }}">
-    
+<form class=“col-8 offset-2 bg-dark p-4 rounded” method=“POST” action="{{ route('cars.store') }}">
+
     @csrf
     <div class=“mb-3”>
         <label for="brand" class=“form-label text-white”>BRAND</label>
@@ -9,9 +9,9 @@
             </p>
         @enderror
         <input type=“text” name="brand" class=“form-control” required value="{{ old('brand', $car->brand) }}"
-            id="brand" >
+            id="brand">
     </div>
-   
+
     </div>
     <div class="mb-3">
         <label for="name" class="form-label text-white">CAR NAME</label>
@@ -20,8 +20,8 @@
                 {{ $message }}
             </p>
         @enderror
-        <input type="text" name="name" class="form-control" id="name" required
-            value="{{ old('name', $car->name) }}">
+        <input type="text" name="car_name" class="form-control" id="name" required
+            value="{{ old('name', $car->car_name) }}">
     </div>
     <div class="mb-3">
         <label for="color" class="form-label text-white">COLOR</label>
@@ -31,7 +31,7 @@
             </p>
         @enderror
         <input type="text" name="color" class="form-control" id="color" required
-            value="{{ old('name', $car->name) }}">
+            value="{{ old('name', $car->color) }}">
     </div>
     <div class="mb-3">
         <label for="trasmission" class="form-label text-white">TRASMISSION</label>
@@ -63,7 +63,6 @@
         <input type="text" name="price" class="form-control" id="price" required
             value="{{ old('price', $car->price) }}">
     </div>
-    
+
     <button type=“submit” class=“btn btn-success”>Submit</button>
 </form>
-
