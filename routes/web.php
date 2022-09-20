@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', "CarsController@index");
+Route::resource('cars', "CarsController");

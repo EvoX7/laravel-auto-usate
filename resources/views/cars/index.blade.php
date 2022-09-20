@@ -2,14 +2,6 @@
 
 @section('main-content')
     <h1>Auto usate</h1>
-
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    INDEX CAR
     <table class="table table-dark table-striped">
         <thead>
             <th>ID</th>
@@ -24,11 +16,11 @@
             <th></th>
         </thead>
         <tbody>
-            @foreach ($cars as $car)
+            @forelse ($cars as $car)
                 <tr>
                     <td>{{ $car->id }}</td>
                     <td>
-                        <a href="{{ route('admin.post.show', $post->id) }}">
+                        <a href="{{ route('cars.show', $car->id) }}">
                             {{ $car->car_name }}
                         </a>
                     </td>
@@ -43,14 +35,14 @@
                         </a>
                     </td>
                     <td>
-                        <form action="#" class="delete-method" method="POST">
+                        {{-- <form action="#" class="delete-method" method="POST">
                             @csrf
                             @method('DELETE')
 
                             <button class="btn btn-danger" type="submit">
                                 Delete
                             </button>
-                        </form>
+                        </form> --}}
                     </td>
                 </tr>
                 @empty
@@ -61,5 +53,4 @@
             </tbody>
         </table>
         </div>
-        @endforeach
     @endsection
