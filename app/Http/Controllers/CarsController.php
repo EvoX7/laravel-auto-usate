@@ -48,7 +48,6 @@ class CarsController extends Controller
         $newCar->trasmission = $data['trasmission'];
         $newCar->mileage = $data['mileage'];
         $newCar->price = $data['price'];
-
         $newCar->save();
 
         return redirect()->route('cars.index');
@@ -65,7 +64,6 @@ class CarsController extends Controller
         $car = Car::findOrFail($id);
 
         return view('cars.show', compact('car'));
-
     }
 
     /**
