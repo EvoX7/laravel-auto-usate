@@ -76,7 +76,8 @@ class CarsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $car = Car::findOrFail($id);
+        return view('cars.edit', compact('car'));
     }
 
     /**
@@ -88,7 +89,11 @@ class CarsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $car = Car::findOrFail($id);
+        $car->update($data);
+
+        return redirect()->route('cars.index');
     }
 
     /**
@@ -99,6 +104,9 @@ class CarsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $car = Car::findOrFail($id);
+        $car->delete();
+
+        return redirect()->route('cars.index');
     }
 }

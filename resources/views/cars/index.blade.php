@@ -32,19 +32,16 @@
                     <td>{{ $car->mileage }}</td>
                     <td>{{ $car->price }}</td>
                     <td>
-                        <a class="btn btn-success" href="#">
+                        <a class="btn btn-success" href="{{ route('cars.edit', $car->id) }}">
                             Edit
                         </a>
                     </td>
                     <td>
-                        {{-- <form action="#" class="delete-method" method="POST">
+                        <form action="{{route('cars.destroy', $car->id)}}" method="post">
                             @csrf
                             @method('DELETE')
-
-                            <button class="btn btn-danger" type="submit">
-                                Delete
-                            </button>
-                        </form> --}}
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 @empty
