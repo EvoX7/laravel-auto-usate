@@ -3,6 +3,8 @@
 @section('main-content')
     <h1>Auto usate</h1>
     <table class="table table-dark table-striped">
+        <a href="{{ route('cars.create') }}" class="btn btn-sm btn-primary">
+        create a new car</a>
         <thead>
             <th>ID</th>
             <th>NAME</th>

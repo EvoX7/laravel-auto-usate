@@ -25,7 +25,10 @@ class CarsController extends Controller
      */
     public function create()
     {
-        //
+        $car = new Car();
+        $route = route('cars.store');
+        $method = 'POST';
+        return view('cars.create', compact(['car', 'route', 'method']));
     }
 
     /**
@@ -37,6 +40,18 @@ class CarsController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+        $newCar = new Car();
+        $newCar->brand = $data['brand'];
+        $newCar->name = $data['name'];
+        $newCar->color = $data['color'];
+        $newCar->trasmission = $data['trasmission'];
+        $newCar->mileage = $data['mileage'];
+        $newCar->price = $data['price'];
+        dd($newCar);
+        $newCar->save();
+
+        return redirect()->route('cars.index');
     }
 
     /**
