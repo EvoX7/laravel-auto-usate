@@ -48,10 +48,7 @@ class CarsController extends Controller
         $newCar->trasmission = $data['trasmission'];
         $newCar->mileage = $data['mileage'];
         $newCar->price = $data['price'];
-<<<<<<< HEAD
         // dd($newCar);
-=======
->>>>>>> c30aa916ff516bcf62f442f5fac0511db20d1ed5
         $newCar->save();
 
         return redirect()->route('cars.index');
@@ -67,11 +64,7 @@ class CarsController extends Controller
     {
         $car = Car::findOrFail($id);
 
-<<<<<<< HEAD
         return view ('cars.show', compact('cars'));
-=======
-        return view('cars.show', compact('car'));
->>>>>>> c30aa916ff516bcf62f442f5fac0511db20d1ed5
     }
 
     /**

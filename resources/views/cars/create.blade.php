@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 <form class="col-8  offset-2 bg-dark p-4 rounded" method="POST" action="{{ route('cars.store') }}">
     
-=======
-<form class="col-8 offset-2 bg-dark p-4 rounded" method="POST" action="{{ route('cars.store') }}">
->>>>>>> c30aa916ff516bcf62f442f5fac0511db20d1ed5
     @csrf
     <div class=“mb-3”>
         <label for="brand" class=“form-label text-white”>BRAND</label>
