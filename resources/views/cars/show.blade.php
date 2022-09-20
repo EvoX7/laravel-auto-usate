@@ -19,7 +19,7 @@
                 Edit
             </a>
         </div>
-        <div class=“mx-3">
+        <div class="mx-3">
             {{-- <form action=“#” class=“delete-method” method=“POST”>
                 @csrf
                 @method(‘DELETE’)

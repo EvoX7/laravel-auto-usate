@@ -49,7 +49,7 @@ class CarsController extends Controller
     {
         $car = Car::findOrFail($id);
 
-        return view ('cars.show', compact('car'));
+        return view ('cars.show', compact('cars'));
     }
 
     /**
