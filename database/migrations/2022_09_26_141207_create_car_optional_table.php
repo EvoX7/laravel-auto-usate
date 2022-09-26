@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAutoOptionalTable extends Migration
+class CreateCarOptionalTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateAutoOptionalTable extends Migration
      */
     public function up()
     {
-        Schema::create('auto_optional', function (Blueprint $table) {
+        Schema::create('car_optional', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('auto_id');
-            $table->foreign('auto_id')->references('id')->on('cars');
+            $table->unsignedBigInteger('car_id');
+            $table->foreign('car_id')->references('id')->on('cars');
             $table->unsignedBigInteger('optional_id');
             $table->foreign('optional_id')->references('id')->on('optionals');
-
-            $table->primary(['auto_id','optional_id']);
+            $table->primary(['car_id','optional_id']);
 
         });
     }
@@ -32,6 +31,6 @@ class CreateAutoOptionalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('auto_optional');
+        Schema::dropIfExists('car_optional');
     }
 }
