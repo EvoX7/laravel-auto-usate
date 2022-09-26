@@ -68,7 +68,7 @@
             @if ($errors->any())
                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
                     name="optional[]" value="{{ $optional->id }}"
-                    {{ in_array($optional->id, old('optionals', [])) ? 'checked' : '' }}>
+                    {{ in_array($optional->id, old('optional', [])) ? 'checked' : '' }}>
             @else
                 <input type="checkbox" name="optional[]" class="form-control" id="optional"
                     value="{{ $optional->id }}" {{ $car->optionals->contains($optional) ? 'checked' : '' }}>
