@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CarTableSeeder::class,
             OptionalTableSeeder::class,
+            CarOptionalTableSeeder::class,
         ]);
     }
 }
