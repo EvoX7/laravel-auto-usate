@@ -64,6 +64,21 @@
         <input type="text" name="price" class="form-control" id="price" required
             value="{{ old('price', $car->price) }}">
     </div>
+    <div class="mb-3">
+        @foreach ($optionals as $optional)
+            @if ($errors->any())
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                    name="optionals[]" value="{{ $optional->id }}"
+                    {{ in_array($optional->id, old('optionals', [])) ? 'checked' : '' }}>
+            @else
+                <input type="checkbox" name="optionals[]" class="form-control" id="optional"
+                    value="{{ $optional->id }}" {{ $car->optionals->contains($optional) ? 'checked' : '' }}>
+            @endif
+
+
+            <label for="optional" class="form-label text-white">{{ $optional->name }}</label>
+        @endforeach
+    </div>
     
     <button type=“submit” class="btn btn-success">Submit</button>
 

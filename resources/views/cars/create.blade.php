@@ -70,7 +70,7 @@
                     {{ in_array($optional->id, old('optional', [])) ? 'checked' : '' }}>
             @else
                 <input type="checkbox" name="optional[]" class="form-control" id="optional"
-                    value="{{ $optional->id }} {{ $car->optionals->contains($optional) ? 'checked' : '' }}">
+                    value="{{ $optional->id }}" {{ $car->optionals->contains($optional) ? 'checked' : '' }}>
             @endif
 
 

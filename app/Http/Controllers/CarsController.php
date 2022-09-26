@@ -30,7 +30,7 @@ class CarsController extends Controller
         $car = new Car;
         // $route = route('cars.store');
         // $method = 'POST';
-        return view('cars.create', compact('car', 'optionals'));
+        return view('cars.create', compact(['car', 'optionals']));
     }
 
     /**
@@ -52,7 +52,7 @@ class CarsController extends Controller
         $newCar->price = $data['price'];
         $newCar->save();
         if (array_key_exists('optional', $data)) {
-            $newCar->optionals()->sync($data['optional']);
+            $newCar->optionals()->sync($data['optionals']);
         }
 
         return redirect()->route('cars.index');
@@ -79,8 +79,9 @@ class CarsController extends Controller
      */
     public function edit($id)
     {
+        $optionals = Optional::All();
         $car = Car::findOrFail($id);
-        return view('cars.edit', compact('car'));
+        return view('cars.edit', compact(['car', 'optionals']));
     }
 
     /**
@@ -95,6 +96,11 @@ class CarsController extends Controller
         $data = $request->all();
         $car = Car::findOrFail($id);
         $car->update($data);
+        if (array_key_exists('optionals', $data)) {
+            $car->optionals()->sync($data['optionals']);
+        } else {
+            $car->optionals()->detach();
+        }
 
         return redirect()->route('cars.index');
     }
