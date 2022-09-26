@@ -3,7 +3,7 @@
     @csrf
     <div class=“mb-3”>
         <label for="brand" class=“form-label text-white”>BRAND</label>
-        @error('title')
+        @error('brand')
             <p class="text-danger fs-6">
                 {{ $message }}
             </p>
@@ -15,7 +15,7 @@
     </div>
     <div class="mb-3">
         <label for="name" class="form-label text-white">CAR NAME</label>
-        @error('name')
+        @error('car_name')
             <p class=“text-danger fs-6”>
                 {{ $message }}
             </p>
