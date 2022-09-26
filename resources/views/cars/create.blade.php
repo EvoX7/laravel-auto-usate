@@ -65,10 +65,20 @@
     <div class="mb-3">
         @foreach ($optionals as $optional)
             @if ($errors->any())
+                @error('optional')
+                    <p class=“text-danger fs-6”>
+                        {{ $message }}
+                    </p>
+                @enderror
                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
                     name="optional[]" value="{{ $optional->id }}"
                     {{ in_array($optional->id, old('optional', [])) ? 'checked' : '' }}>
             @else
+                @error('optional')
+                    <p class=“text-danger fs-6”>
+                        {{ $message }}
+                    </p>
+                @enderror
                 <input type="checkbox" name="optional[]" class="form-control" id="optional"
                     value="{{ $optional->id }}" {{ $car->optionals->contains($optional) ? 'checked' : '' }}>
             @endif

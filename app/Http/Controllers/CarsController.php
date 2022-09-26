@@ -18,7 +18,7 @@ class CarsController extends Controller
         'mileage' => 'required|numeric',
         'color' => 'required|',
         'price' => 'required|numeric',
-        'optional' => 'nullable|exists:optionals,id'
+        'optional' => 'required|exists:optionals,id|between:1,3'
     ];
 
     /**
