@@ -18,9 +18,9 @@ class CarsTable extends Migration
             $carsTable->string('brand', 30);
             $carsTable->string('car_name', 30);
             $carsTable->string('trasmission', 20);
-            $carsTable->decimal('mileage', 5,3);
+            $carsTable->decimal('mileage', 5, 3);
             $carsTable->string('color');
-            $carsTable->decimal('price', 7,3);
+            $carsTable->decimal('price', 7, 3);
             $carsTable->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CarsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('cars');
     }
 }
