@@ -2,7 +2,7 @@
     @csrf
     <div class=“mb-3”>
         <label for="brand" class=“form-label text-white”>BRAND</label>
-        @error('title')
+        @error('brand')
             <p class="text-danger fs-6">
                 {{ $message }}
             </p>
@@ -14,13 +14,13 @@
     </div>
     <div class="mb-3">
         <label for="name" class="form-label text-white">CAR NAME</label>
-        @error('name')
+        @error('car_name')
             <p class=“text-danger fs-6”>
                 {{ $message }}
             </p>
         @enderror
         <input type="text" name="car_name" class="form-control" id="name" required
-            value="{{ old('name', $car->car_name) }}">
+            value="{{ old('car_name', $car->car_name) }}">
     </div>
     <div class="mb-3">
         <label for="color" class="form-label text-white">COLOR</label>
@@ -30,7 +30,7 @@
             </p>
         @enderror
         <input type="text" name="color" class="form-control" id="color" required
-            value="{{ old('name', $car->color) }}">
+            value="{{ old('color', $car->color) }}">
     </div>
     <div class="mb-3">
         <label for="trasmission" class="form-label text-white">TRASMISSION</label>

@@ -21,7 +21,7 @@
             </p>
         @enderror
         <input type="text" name="car_name" class="form-control" id="name" required
-            value="{{ old('name', $car->car_name) }}">
+            value="{{ old('car_name', $car->car_name) }}">
     </div>
     <div class="mb-3">
         <label for="color" class="form-label text-white">COLOR</label>
@@ -31,7 +31,7 @@
             </p>
         @enderror
         <input type="text" name="color" class="form-control" id="color" required
-            value="{{ old('name', $car->color) }}">
+            value="{{ old('color', $car->color) }}">
     </div>
     <div class="mb-3">
         <label for="trasmission" class="form-label text-white">TRASMISSION</label>
@@ -81,4 +81,3 @@
     
     <button type=“submit” class="btn btn-success">Submit</button>
 
-    <button type=“submit” class="btn btn-success">Submit</button>
