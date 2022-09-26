@@ -62,6 +62,18 @@
         <input type="text" name="price" class="form-control" id="price" required
             value="{{ old('price', $car->price) }}">
     </div>
+    <div class="mb-3">
+        <label for="optional" class="form-label text-white">OPTIONALS</label>
+        @error('optional')
+            <p class=“text-danger fs-6”>
+                {{ $message }}
+            </p>
+        @enderror
+        @foreach ($optionals as $optional)
+            <input type="checkbox" name="optional[]" class="form-control" id="optional" required
+            value="{{ old('optional', $car->optional) }}"> {{ $optional->name }} 
+        @endforeach
+    </div>
     
     <button type=“submit” class="btn btn-success">Submit</button>
 

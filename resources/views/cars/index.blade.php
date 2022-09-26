@@ -14,8 +14,9 @@
             </th>
             <th>MILEAGE</th>
             <th>PRICE</th>
-            <th></th>
-            <th></th>
+            <th>OPTIONAL</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
         </thead>
         <tbody>
             @forelse ($cars as $car)
@@ -31,6 +32,11 @@
                     <td>{{ $car->trasmission }}</td>
                     <td>{{ $car->mileage }}</td>
                     <td>{{ $car->price }}</td>
+                    <td>
+                        @foreach ($car->optionals as $optional)
+                            {{ $optional->name }}
+                        @endforeach
+                    </td>
                     <td>
                         <a class="btn btn-success" href="{{ route('cars.edit', $car->id) }}">
                             Edit

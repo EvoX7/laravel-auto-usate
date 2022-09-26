@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Car;
+use App\Optional;
 use Illuminate\Http\Request;
 
 class CarsController extends Controller
@@ -25,10 +26,11 @@ class CarsController extends Controller
      */
     public function create()
     {
+        $optionals = Optional::All();
         $car = new Car;
         // $route = route('cars.store');
         // $method = 'POST';
-        return view('cars.create', compact('car'));
+        return view('cars.create', compact('car', 'optionals'));
     }
 
     /**
