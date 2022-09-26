@@ -1,4 +1,3 @@
-
 <form class="col-8 offset-2 bg-dark p-4 rounded" method="POST" action="{{ route('cars.update', $car->id) }}">
     @method('PUT')
     @csrf
@@ -64,6 +63,5 @@
         <input type="text" name="price" class="form-control" id="price" required
             value="{{ old('price', $car->price) }}">
     </div>
-    
-    <button type=“submit” class="btn btn-success">Submit</button>
 
+    <button type=“submit” class="btn btn-success">Submit</button>
