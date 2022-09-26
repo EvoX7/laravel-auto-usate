@@ -51,6 +51,9 @@ class CarsController extends Controller
         $newCar->mileage = $data['mileage'];
         $newCar->price = $data['price'];
         $newCar->save();
+        if (array_key_exists('optional', $data)) {
+            $newCar->optionals()->sync($data['optional']);
+        }
 
         return redirect()->route('cars.index');
     }

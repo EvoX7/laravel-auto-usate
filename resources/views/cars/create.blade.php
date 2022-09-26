@@ -63,17 +63,19 @@
             value="{{ old('price', $car->price) }}">
     </div>
     <div class="mb-3">
-        <label for="optional" class="form-label text-white">OPTIONALS</label>
-        @error('optional')
-            <p class=“text-danger fs-6”>
-                {{ $message }}
-            </p>
-        @enderror
         @foreach ($optionals as $optional)
-            <input type="checkbox" name="optional[]" class="form-control" id="optional" required
-            value="{{ old('optional', $car->optional) }}"> {{ $optional->name }} 
+            @if ($errors->any())
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                    name="optional[]" value="{{ $optional->id }}"
+                    {{ in_array($optional->id, old('optional', [])) ? 'checked' : '' }}>
+            @else
+                <input type="checkbox" name="optional[]" class="form-control" id="optional"
+                    value="{{ $optional->id }} {{ $car->optionals->contains($optional) ? 'checked' : '' }}">
+            @endif
+
+
+            <label for="optional" class="form-label text-white">{{ $optional->name }}</label>
         @endforeach
     </div>
-    
-    <button type=“submit” class="btn btn-success">Submit</button>
 
+    <button type=“submit” class="btn btn-success">Submit</button>
