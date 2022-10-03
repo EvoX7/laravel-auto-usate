@@ -9,17 +9,17 @@ use Illuminate\Http\Request;
 class CarsController extends Controller
 {
 
-    
+
 
     protected  $validationRules = [
-    'car_name' => 'required|min:2',
-    'brand' => 'required|min:2',
-    'trasmission' => 'required|min:2',
-    'mileage' => 'required|numeric',
-    'color' => 'required|',
-    'price' => 'required|numeric',
-    'optional' => 'nullable|exists:optionals,id'
-];
+        'car_name' => 'required|min:2',
+        'brand' => 'required|min:2',
+        'trasmission' => 'required|min:2',
+        'mileage' => 'required|numeric',
+        'color' => 'required|',
+        'price' => 'required|numeric',
+        'optional' => 'required|exists:optionals,id|between:1,3'
+    ];
 
     /**
      * Display a listing of the resource.
@@ -54,7 +54,7 @@ class CarsController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $request->validate($this->validationRules);
 
         $data = $request->all();
@@ -110,12 +110,12 @@ class CarsController extends Controller
     {
 
         $request->validate($this->validationRules);
-        
+
         $data = $request->all();
         $car = Car::findOrFail($id);
         $car->update($data);
-        if (array_key_exists('optionals', $data)) {
-            $car->optionals()->sync($data['optionals']);
+        if (array_key_exists('optional', $data)) {
+            $car->optionals()->sync($data['optional']);
         } else {
             $car->optionals()->detach();
         }

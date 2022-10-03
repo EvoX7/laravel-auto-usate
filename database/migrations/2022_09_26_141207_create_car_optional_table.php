@@ -16,11 +16,10 @@ class CreateCarOptionalTable extends Migration
         Schema::create('car_optional', function (Blueprint $table) {
 
             $table->unsignedBigInteger('car_id');
-            $table->foreign('car_id')->references('id')->on('cars');
+            $table->foreign('car_id')->references('id')->on('cars')->onDelete('cascade');
             $table->unsignedBigInteger('optional_id');
-            $table->foreign('optional_id')->references('id')->on('optionals');
-            $table->primary(['car_id','optional_id']);
-
+            $table->foreign('optional_id')->references('id')->on('optionals')->onDelete('cascade');
+            $table->primary(['car_id', 'optional_id']);
         });
     }
 

@@ -3,7 +3,7 @@
     @csrf
     <div class=“mb-3”>
         <label for="brand" class=“form-label text-white”>BRAND</label>
-        @error('title')
+        @error('brand')
             <p class="text-danger fs-6">
                 {{ $message }}
             </p>
@@ -15,7 +15,7 @@
     </div>
     <div class="mb-3">
         <label for="name" class="form-label text-white">CAR NAME</label>
-        @error('name')
+        @error('car_name')
             <p class=“text-danger fs-6”>
                 {{ $message }}
             </p>
@@ -66,11 +66,21 @@
     <div class="mb-3">
         @foreach ($optionals as $optional)
             @if ($errors->any())
+                @error('optional')
+                    <p class=“text-danger fs-6”>
+                        {{ $message }}
+                    </p>
+                @enderror
                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                    name="optionals[]" value="{{ $optional->id }}"
-                    {{ in_array($optional->id, old('optionals', [])) ? 'checked' : '' }}>
+                    name="optional[]" value="{{ $optional->id }}"
+                    {{ in_array($optional->id, old('optional', [])) ? 'checked' : '' }}>
             @else
-                <input type="checkbox" name="optionals[]" class="form-control" id="optional"
+                @error('optional')
+                    <p class=“text-danger fs-6”>
+                        {{ $message }}
+                    </p>
+                @enderror
+                <input type="checkbox" name="optional[]" class="form-control" id="optional"
                     value="{{ $optional->id }}" {{ $car->optionals->contains($optional) ? 'checked' : '' }}>
             @endif
 
@@ -78,6 +88,5 @@
             <label for="optional" class="form-label text-white">{{ $optional->name }}</label>
         @endforeach
     </div>
-    
-    <button type=“submit” class="btn btn-success">Submit</button>
 
+    <button type=“submit” class="btn btn-success">Submit</button>
