@@ -13,5 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', "CarsController@index");
 Route::resource('cars', "CarsController");
+
+Route::get('{any?}', function () {
+    return view('guest.home');
+})->where('any', '.*');
